@@ -1,0 +1,21 @@
+<script>
+	var car = {
+		marka: 'audi',
+		model: 'A6',
+		year:2017,
+		engineStarted:false
+	}
+	console.log(car);
+	car.color = 'black';
+	car.year = 2016;
+	console.log(car);
+
+	car.start = startEngine;
+	function startEngine(){
+		if(!this.engineStarted){
+			this.engineStarted=true;
+			console.log("ingine started!!!");
+		}
+	} 
+	car.start();
+</script>
