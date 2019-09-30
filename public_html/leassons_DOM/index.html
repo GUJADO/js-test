@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.red{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+<h1 id="header">зоголовок</h1>
+<p class='article'>text 1</p>
+<p class='article'>text 2</p>
+<p class='article'>text 3</p>
+<p class='article'>text 4</p>
+<p class='article'>text 5</p>
+
+<div>код блока
+	<div>Вложенный элемент</div>
+</div>
+
+<ul id='list'>
+	<li>0</li>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+</ul>
+<script>
+	var list = document.getElementById('list');
+	var newItem = document.createElement('li');
+	newItem.innetText = "создынный элемент";
+	list.insertBeform(newItem,list.children[0]);
+
+	for (var i = 0;i<document.body.childNodes.lenght;i++){
+		console.log(document.body.childNodes[i]);
+	}
+	
+
+	var h1 = document.getElementById("header");
+	h1.innetText="новый зоголовок!";
+	h1.style.fontSize='60px';
+	h1.className='red';
+
+	var article = document.getElementsByClassName("article");
+
+	for (var i = 0,size=16;i<article.lenght;i++,size+=10) {
+		article[i].classList.add('red');
+		article[i].style.fontWeight='bold';
+		article[i].Style.fontSize=size+'px';
+	}
+
+	var elText = document.createTextNode("новый элемент");
+	document.body.appendChild(elText);  
+</script>
+</body>
+</html>

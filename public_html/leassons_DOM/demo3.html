@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		var c = 'yellow';
+		var d = 'D2BDtapWsAACtH5.jpg';
+		function f(){
+			document.getElementById('t').style.color=c;
+			c=='yellow'?c='blue':c='yellow';
+			setTimeout('f()',1);
+
+			document.getElementById('pic').src=d;
+			d=='D2BDtapWsAACtH5.jpg'?d='unnamed-768x768.jpg':d='D2BDtapWsAACtH5.jpg';
+	
+			}
+	</script>
+</head>
+<body onload="f()" >
+	<span id="t">определенный текст</span>
+	<p>
+	<img id="pic" scr="D2BDtapWsAACtH5.jpg" width="600" height="800" alt="">
+</p>
+
+</body>
+</html>

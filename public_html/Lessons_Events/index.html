@@ -1,0 +1,23 @@
+<script>
+	function f(){
+		var h1 = document.getElementById('header');
+		h1.style.color="red";
+	}
+
+	function g(c){
+		var h1 = document.getElementById('header');
+		h1.style.color=c;
+
+	}	
+</script>
+
+<h1 id="header"> кнопка</h1>
+
+<button onclick="f()">кнопка</button>
+<br>
+
+<select onchange="g(this.value)">
+	<option value="red">красный</option>
+	<option value="blue">синий</option>
+	<option value="green">зеленый</option>
+</select>

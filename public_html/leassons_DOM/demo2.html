@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/aja/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+		var x = 0;
+		function f(){
+			var innerE1 = "<option>&#9742;"+x+"/option";
+			$("#num").append(innerE1);
+		}			
+	</script>
+
+	<style></style> 
+</head>
+<body>
+	<p class='article'>текст статьи 1</p>
+	<p id='x'> текст статьи 2</p>
+	<p class='article'> текст статьи 3</p>
+
+	<select id=" num"></select>
+	<button onclick= "f()">Ok</button>
+
+	<script>
+		$(".article").css("color","blue");
+		//$("p").css("color","blue");
+		//$(".article").addClass('red');
+	</script>
+
+</body>
+</html>
