@@ -98,7 +98,7 @@ else{
 	fimistTheGame();
 }
 
-
+}
 
 function isSnakeUnit(unit) {
 	var check = false;
