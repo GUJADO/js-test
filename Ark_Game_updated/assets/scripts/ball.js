@@ -4,29 +4,28 @@ game.ball = {
 	frame: 0,
 	velocity: 10,
 	x: game.width / 2 - 20,
-	y: game.hight - 85,
+	y: game.height - 85,
 	width: 40,
-	hight: 40,
+	height: 40,
 	start() {
 		this.dy = -this.velocity;
-		this.dx = game.random (-this.velocity, this.velocity);
+		this.dx = game.random(-this.velocity, this.velocity);
 	},
 	animate() {
 		setInterval(() => {
 			++this.frame;
 			if (this.frame > 3) {
 				this.frame = 0;
-
 			}
-		},100);
+		}, 100);
 	},
-	move () {
+	move() {
 		if (this.dy) {
 			this.y += this.dy;
 		}
 		if (this.dx) {
 			this.x += this.dx;
-		}	 
+		}
 	},
 	collide(element) {
 		let x = this.x + this.dx;
@@ -34,13 +33,13 @@ game.ball = {
 
 		if (x + this.width > element.x &&
 			x < element.x + element.width &&
-			y + this.hight > element.y &&
-			y < element.y + element.hight) {
+			y + this.height > element.y &&
+			y < element.y + element.height) {
 			return true;
 		}
 		return false;
 	},
-	collideWorldBounds() {
+	collideWorldBounds(){
 		let x = this.x + this.dx;
 		let y = this.y + this.dy;
 
@@ -52,8 +51,7 @@ game.ball = {
 		let worldLeft = 0;
 		let worldRight = game.width;
 		let worldTop = 0;
-		let ballBottom = game.height;
-
+		let worldBottom = game.height;
 
 		if (ballLeft < worldLeft) {
 			this.x = 0;
@@ -61,16 +59,16 @@ game.ball = {
 			game.sounds.bump.play();
 		} else if (ballRight > worldRight) {
 			this.x = worldRight - this.width;
-			this.dx = - this.velocity;
+			this.dx = -this.velocity;
 			game.sounds.bump.play();
-		} else if (ballTop > worldTop) {
+		} else if (ballTop < worldTop) {
 			this.y = 0;
-			this.dy =  this.velocity;
-			game.sounds.bump.play();	
+			this.dy = this.velocity;
+			game.sounds.bump.play();
 		} else if (ballBottom > worldBottom) {
-			game.end("YOU LOSE");
+			game.end("Вы проиграли");
 		}
-	}, 
+	},
 	bumpBlock(block) {
 		this.dy *= -1;
 		block.active = false;
@@ -80,15 +78,9 @@ game.ball = {
 			this.x += platform.dx;
 		}
 		if (this.dy > 0) {
-			this.dy =- this.velocity;
+			this.dy = -this.velocity;
 			let touchX = this.x + this.width / 2;
-			this.dx  = this.velocity * platform.getTouchOffset(touchX);
+			this.dx = this.velocity * platform.getTouchOffset(touchX);
 		}
 	}
-
 };
-
-
-	
-
-	
