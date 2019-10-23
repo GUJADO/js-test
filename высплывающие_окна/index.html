@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>lessons 13</title>
+	<link rel="stylesheet"  href="css/bootstrap.min (1).css">
+    <link rel="stylesheet"  href="css/material-kit.css">
+	<link rel="stylesheet"  href="css/style.css">
+</head>
+<body>
+
+	<div class="container text-center">
+		<button class="btn btn-primary" data-fruit='Яблоко' data-popup="true">хочу яблоко</button>
+		<button class="btn btn-success" data-fruit='Абрикос' data-popup="true">хочу абрикос</button>
+		<button class="btn btn-danger" data-fruit='Апельсин' data-popup="true">хочу апельсин</button>
+	</div>
+
+<div class="overlay"></div>	
+<div class="popup text-center">
+<div class="close-btn">&times;</div>
+    <h4> Купите <span class="fruit-name">фрукт!</span></h4>
+    <form action="#">
+    	<input type="text" class="form-control" placeholder="Ваше имя">
+    	<input type="text" class="form-control" placeholder="Ваш телефон">
+    	<button type="submit" class="btn btn-danger">Купить <span class="fruit-name">фрукт</span></button>
+    </form>
+</div>
+
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
