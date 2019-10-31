@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Basket</title>
+	<style>
+		.good{
+			box-sizing: border-box;
+			width: 200px;
+			border: 1px solid #000;
+			border-radius: 5px;
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+	</style>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/Basket.js"></script>
+	<script>
+		$(document).ready(function () {
+			var basket = new Basket();
+			basket.render('#basket_wrapper');
+
+			$('.buyme').on('click' , function () {
+				// var idProduct = parseInt($(this).attr('id').split('_')[1]);
+				var idProduct = parseInt($(this).attr('data-id'));
+				var quantity = parseInt($(this).parent().find('.count').val());
+				var price = parseInt($(this).parent().find('.product-price').text());
+				basket.add
+			}
+
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
